@@ -1,0 +1,11 @@
+[Unit]
+Description=System Sensor service
+After=multi-user.target
+
+[Service]
+User=root
+Type=idle
+ExecStart=/usr/bin/python3 /root/system_sensors/src/system_sensors.py /root/system_sensors/src/settings.yaml
+
+[Install]
+WantedBy=multi-user.target
