@@ -1,40 +1,24 @@
-# RPI System sensors
-[![GitHub Release][releases-shield]][releases]
-[![License][license-shield]](LICENSE.md)
-
-![Project Maintenance][maintenance-shield]
-[![GitHub Activity][commits-shield]][commits]
-
-[![Community Forum][forum-shield]][forum]
+# RPI System sensors (system monitor)
 
 
-I’ve created a simple python script that runs every 60 seconds and sends several system data over MQTT. It uses the MQTT Discovery for Home Assistant so you don’t need to configure anything in Home Assistant if you have discovery enabled for MQTT
+I’ve folk a simple python script that runs every 60 seconds and sends several system data over MQTT. It uses the MQTT Discovery for Home Assistant so you don’t need to configure anything in Home Assistant if you have discovery enabled for MQTT
 
 It currently logs the following data:
 * CPU usage
 * CPU temperature
 * Disk usage
 * Memory usage
-* Power status of the RPI
+* Power status (Undervoltage)
 * Last boot
-* Last message received timestamp
 * Swap usage
-* Wifi signal strength
-* Wifi connected SSID
-* Amount of upgrades pending
-* Disk usage of external drives
-* Hostname
-* Host local IP
-* Host OS distro and version
-* CPU Load (1min, 5min and 15min)
-* Network Download & Upload throughput
+
 
 # System Requirements
 
 You need to have at least __python 3.6__ installed to use System Sensors.
 
 # Installation:
-1. Clone this repo >> git clone https://github.com/Sennevds/system_sensors.git
+1. Clone this repo >> git clone https://github.com/anhtuanng98/system_sensors.git
 2. cd system_sensors
 3. pip3 install -r requirements.txt
 4. sudo apt-get install python3-apt
@@ -121,11 +105,4 @@ Example:
 
 ![alt text](images/example.png?raw=true "Example")
 
-[commits-shield]: https://img.shields.io/github/commit-activity/y/Sennevds/system_sensors?style=for-the-badge
-[commits]: https://github.com/sennevds/system_sensors/commits/master
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/t/remote-rpi-system-monitor/129274
-[license-shield]: https://img.shields.io/github/license/sennevds/system_sensors.svg?style=for-the-badge
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/sennevds/system_sensors.svg?style=for-the-badge
-[releases]: https://github.com/sennevds/system_sensors/releases
+[releases]: https://github.com/anhtuanng98/system_sensors/releases
