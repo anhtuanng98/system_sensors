@@ -18,11 +18,12 @@ It currently logs the following data:
 You need to have at least __python 3.6__ installed to use System Sensors.
 
 # Installation:
-1. Clone this repo >> git clone https://github.com/anhtuanng98/system_sensors.git
-2. cd system_sensors
-3. pip3 install -r requirements.txt
-4. sudo apt-get install python3-apt
-5. Edit settings_example.yaml in "~/system_sensors/src" to reflect your setup and save as settings.yaml:
+1. sudo apt-get install python3-pip
+2. Clone this repo >> git clone https://github.com/anhtuanng98/system_sensors.git
+3. cd system_sensors
+4. pip3 install -r requirements.txt
+5. sudo apt-get install python3-apt
+6. Edit settings_example.yaml in "~/system_sensors/src" to reflect your setup and save as settings.yaml:
 
 | Value  | Required | Default | Description | 
 | ------------- | ------------- | ------------- | ------------- |
@@ -48,12 +49,12 @@ Example:
 | timezone | true | \ | Your local timezone (you can find the list of timezones here: [time zones](https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568))
 | update_interval | false | 60 | The update interval to send new values to the MQTT broker 
 
-6. python3 src/system_sensors.py src/settings.yaml
-7. (optional) create service to autostart the script at boot for raspbian:
+7. python3 src/system_sensors.py src/settings.yaml
+8. (optional) create service to autostart the script at boot for raspbian:
     1. sudo cp system_sensors_rpi.service /etc/systemd/system/system_sensors_rpi.service
     2. sudo systemctl enable system_sensors_rpi.service
     3. sudo systemctl start system_sensors_rpi.service
-8. (optional) create service to autostart the script at boot for debian/armbian:
+9. (optional) create service to autostart the script at boot for debian/armbian:
     1. sudo cp system_sensors_armbian.service /etc/systemd/system/system_sensors_armbian.service
     2. sudo systemctl enable system_sensors_armbian.service
     3. sudo systemctl start system_sensors_armbian.service
