@@ -50,11 +50,12 @@ Example:
 
 6. python3 src/system_sensors.py src/settings.yaml
 7. (optional) create service to autostart the script at boot:
-    With Raspbian:
+    
+a. With Raspbian:
     1. sudo cp system_sensors_rpi.service /etc/systemd/system/system_sensors_rpi.service
     2. sudo systemctl enable system_sensors_rpi.service
     3. sudo systemctl start system_sensors_rpi.service
-    With Debian/Armbian:
+b. With Debian/Armbian:
     1. sudo cp system_sensors_armbian.service /etc/systemd/system/system_sensors_armbian.service
     2. sudo systemctl enable system_sensors_armbian.service
     3. sudo systemctl start system_sensors_armbian.service
