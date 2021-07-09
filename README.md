@@ -1,7 +1,7 @@
-# RPI System sensors (system monitor)
+# System sensors for Debian and Raspbian
 
 
-I’ve folk a simple python script that runs every 60 seconds and sends several system data over MQTT. It uses the MQTT Discovery for Home Assistant so you don’t need to configure anything in Home Assistant if you have discovery enabled for MQTT
+I’ve folk this code and add some file to suitable with more machine (debian, armbian, raspbian)
 
 It currently logs the following data:
 * CPU usage
@@ -35,17 +35,30 @@ You need to have at least __python 3.6__ installed to use System Sensors.
 | timezone | true | \ | Your local timezone (you can find the list of timezones here: [time zones](https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568))
 | power_integer_state(Deprecated) | false | false | Deprecated
 | update_interval | false | 60 | The update interval to send new values to the MQTT broker 
-| check_available_updates | false | false | Check the # of avaiblable updates 
-| check_wifi_strength | false | false | Check the wifi strength 
-| check_wifi_ssid | false | false | Check the wifi connected SSID 
-| external_drives | false | \ | Declare external drives you want to check disk usage of (see example settings.yaml)
+
+Example:
+| Value  | Required | Default | Description | 
+| ------------- | ------------- | ------------- | ------------- |
+| hostname  | true | \ | 192.168.1.50
+| port  | false | 1883 | Port of the MQTT broker
+| user | false | \ | mqtt_user_id
+| password | false | \ | mqtt_user_passwd
+| deviceName | true | \ | Name_of_device
+| client_id | true | \ | id_of_device (eg: tx3_mini_pc)
+| timezone | true | \ | Your local timezone (you can find the list of timezones here: [time zones](https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568))
+| update_interval | false | 60 | The update interval to send new values to the MQTT broker 
 
 6. python3 src/system_sensors.py src/settings.yaml
 7. (optional) create service to autostart the script at boot:
-    1. sudo cp system_sensors.service /etc/systemd/system/system_sensors.service
-    2. edit the path to your script path and settings.yaml. Also make sure you replace pi in "User=pi" with the account from which this script will be run. This is typically 'pi' on default raspbian system.
-    4. sudo systemctl enable system_sensors.service 
-    5. sudo systemctl start system_sensors.service
+    With Raspbian:
+    1. sudo cp system_sensors_rpi.service /etc/systemd/system/system_sensors_rpi.service
+    2. sudo systemctl enable system_sensors_rpi.service
+    3. sudo systemctl start system_sensors_rpi.service
+    With Debian/Armbian:
+    1. sudo cp system_sensors_armbian.service /etc/systemd/system/system_sensors_armbian.service
+    2. sudo systemctl enable system_sensors_armbian.service
+    3. sudo systemctl start system_sensors_armbian.service
+
 
 # Home Assistant configuration:
 ## Configuration:
