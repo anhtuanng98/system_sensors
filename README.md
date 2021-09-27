@@ -18,7 +18,7 @@ It currently logs the following data:
 You need to have at least __python 3.6__ installed to use System Sensors.
 
 # Installation:
-1. sudo apt-get install python3-pip
+1. sudo apt-get install python3-pip -y && sudo apt-get install python-setuptools -y
 2. Clone this repo >> git clone https://github.com/anhtuanng98/system_sensors.git
 3. cd system_sensors
 4. pip3 install -r requirements.txt
