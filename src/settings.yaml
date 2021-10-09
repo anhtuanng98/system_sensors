@@ -1,14 +1,12 @@
 mqtt:
   hostname: 127.0.0.1
-  port: 1234 #defaults to 1883
+  port: 1883
   user: test
   password: test
 deviceName: test
 client_id: test
-timezone: Europe/Brussels
+timezone: Asia/Ho_chi_Minh
 update_interval: 60 #Defaults to 60
-check_wifi_strength: true
+check_wifi_strength: false
 check_wifi_ssid: false
-check_available_updates: true
-external_drives:
-  Drive1: /boot/
+check_available_updates: false
